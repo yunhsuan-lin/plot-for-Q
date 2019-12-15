@@ -1,4 +1,4 @@
-plor_for_Q <- function (Reference_gene,
+plo_for_Q <- function (Reference_gene,
                         Target_gene,
                         y_axis,
                         line1,
