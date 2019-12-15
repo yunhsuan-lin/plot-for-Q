@@ -21,8 +21,8 @@ plor_for_Q <- function (Reference_gene,
   data_T <- na.omit (data_T)
   data_as <- data_T %>% group_by (line, KN, DAS) %>% summarise (AVG = mean (Concentration), STD = sd (Concentration)) # table of avg & std
   
-  line_point_line1 <- paste (Target_gene, "-", Reference_gene, "_", "WT_p.pdf")
-  line_point_line2 <- paste (Target_gene, "-", Reference_gene, "_", "nrt1.13_p.pdf")
+  line_point_line1 <- paste (Target_gene, "-", Reference_gene, "_", line1, "_p.pdf")
+  line_point_line2 <- paste (Target_gene, "-", Reference_gene, "_", line2, "_p.pdf")
   
   a <- as.numeric (((data_as[data_as$line == line1 & data_as$KN == "2 KN" & data_as$DAS == 40, "AVG"] - data_as[data_as$line == line1 & data_as$KN == "2 KN" & data_as$DAS == 32, "AVG"]) / (40 - 32) * (33 - 32)) + data_as[data_as$line == line1 & data_as$KN == "2 KN" & data_as$DAS == 32, "AVG"])
   b <- as.numeric (((data_as[data_as$line == line1 & data_as$KN == "0.2 KN" & data_as$DAS == 40, "AVG"] - data_as[data_as$line == line1 & data_as$KN == "0.2 KN" & data_as$DAS == 32, "AVG"]) / (40 - 32) * (37 - 32)) + data_as[data_as$line == line1 & data_as$KN == "0.2 KN" & data_as$DAS == 32, "AVG"])
